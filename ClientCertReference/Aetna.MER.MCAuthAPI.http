@@ -1,0 +1,59 @@
+@Aetna.MER.MCAuthAPI_HostAddress2 = http://localhost:5104
+
+##dsv_meritaiinconnect/userinfo{1}, dsv_meritainconnect/authenticate
+
+###
+
+
+POST {{Aetna.MER.MCAuthAPI_HostAddress}}/Authentication/authenticate
+Content-Type: application/json
+
+{
+  "authenticateUserRequest": {
+    "userId": "member135_test",
+    "currentPassword": "!Meritain10",
+    "userType": "Member",
+    "domain": {
+      "domainName": "",
+      "domainId": "1234"
+    },
+    "userAttributes": [
+      {
+        "key": "appname",
+        "value": "MeritainMobileApp"
+      }
+    ]
+  }
+}
+
+
+###
+
+GET {{Aetna.MER.MCAuthAPI_HostAddress}}/UserInfo/details/custtest.cust.meritain.com/member135_test
+
+
+###
+
+POST {{Aetna.MER.MCAuthAPI_HostAddress}}/UserCommPref/details
+Content-Type: application/json
+
+{
+  "constituentType": "N/A",
+  "ssk": [
+    {
+      "key": "userID/windowsaccountname",
+      "value": "Test_123"
+    },
+    {
+      "key": "Object_GUID",
+      "value": "Unique value to test account"
+    },
+    {
+      "key": "upn",
+      "value": "user principal name"
+    }
+  ]
+}
+
+###
+
